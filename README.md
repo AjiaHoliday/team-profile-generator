@@ -35,7 +35,7 @@
   ## Video Walkthrough
   [Link to video Walkthrough](https://www.loom.com/share/6c20effedfb54bcbb63db6afc3e1bcc9)
   
-  [img of sample site](./src/example-html)
+  ![img of sample site](./src/example-html)
 
   ## Link & Questions
   You can find the link to my application [here](github.com/AjiaHoliday/readme-generator).
