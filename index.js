@@ -21,19 +21,44 @@ function Prompt() {
                 choices: ['Manager', 'Engineer', 'Intern']
             },
             {
-                type: 'text',
+                type: 'input',
                 name: 'name',
-                message: "What is the Employee's Name?"
+                message: "What is the Employee's Name?",
+                validate: nameInput => {
+                    if(nameInput) {
+                        return true;
+                    } else {
+                        console.log("Please enter employee name.");
+                        return false;
+                    }
+                }
             },
             {
-                type: 'text',
+                type: 'input',
                 name: 'id',
-                message: "What is this employee's ID number"
+                message: "What is this employee's ID number",
+                validate: idInput => {
+                    if(idInput) {
+                        return true;
+                    } else {
+                        console.log("Please enter employee ID.");
+                        return false;
+                    }
+                }
             },
             {
-                type: 'text',
+                type: 'input',
                 name: 'email',
-                message: "What is the employee's email address?"
+                message: "What is the employee's email address?",
+                validate: email => {
+                    valid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)
+                    if (valid) {
+                        return true;
+                    } else {
+                        console.log ('Please enter an email!')
+                        return false; 
+                    }
+                }
             }
         ])
         .then(({name, id, email, role}) => {
@@ -41,15 +66,23 @@ function Prompt() {
                 return inquirer
                     .prompt([
                         {
-                            type: 'text',
+                            type: 'input',
                             name: 'officeNumber',
-                            message: "What is this manager's office number?"
+                            message: "What is this manager's office number?",
+                            validate: officeInput => {
+                                if  (isNaN(officeInput)) {
+                                    console.log ('Please enter an office number!')
+                                    return false; 
+                                } else {
+                                    return true;
+                                }
+                            }
                         },
                         {
                             type: 'confirm',
                             name: 'anotherEmployee',
                             message: "Would you like to enter another employee?",
-                            default: true
+                            default: false
                         }
                     ])
                     .then(({officeNumber, anotherEmployee}) => {
@@ -64,13 +97,20 @@ function Prompt() {
                     .prompt([{
                         type: 'text',
                         name: 'github',
-                        message: "What is the Engineer's Github username?"
+                        message: "What is the Engineer's Github username?",
+                        validate: githubInput => {
+                            if (githubInput ) {
+                                return true;
+                            } else {
+                                console.log ("Please enter the employee's github username!")
+                            }
+                        }
                     },
                     {
                         type:'confirm',
                         name:'anotherEmployee',
                         message: "What you like to add another employee?",
-                        default: true
+                        default: false
                     }])
                     .then(({github, anotherEmployee}) => {
                         engineer.push(new Engineer(name, id, email, github));
@@ -83,7 +123,14 @@ function Prompt() {
                     .prompt([{
                         type:'text',
                         name:'school',
-                        message: "What is the Intern's school?"
+                        message: "What is the Intern's school?",
+                        validate: schoolInput => {
+                            if (schoolInput) {
+                                return true;
+                            } else {
+                                console.log ("Please enter the intern's school.")
+                            }
+                        }
                     },
                     {
                         type:'confirm',
