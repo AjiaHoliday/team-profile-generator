@@ -21,10 +21,8 @@
 
   ## Usage
   Dynamically generate a page with team profiles to access Github Repos and contact information. 
-
   
   ## License
-  
   ![License](https://img.shields.io/badge/License-unlicense-blue.svg)
   [Learn More about unlicense](https://choosealicense.com/licenses/unlicense)
 
@@ -36,8 +34,10 @@
   
   ## Video Walkthrough
   [Link to video Walkthrough](https://www.loom.com/share/6c20effedfb54bcbb63db6afc3e1bcc9)
+  
+  [img of sample site](./src/example-html)
 
-  ## Questions
+  ## Link & Questions
   You can find the link to my application [here](github.com/AjiaHoliday/readme-generator).
   If you have any questions about this Team Profile Generator, contact me at will. 
 
