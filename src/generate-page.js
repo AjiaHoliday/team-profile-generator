@@ -25,7 +25,7 @@ const generateCards = employeeCards => {
     const engineer = employeeCards.engineer.map(function(engineer) {
         let engineerCard = `
             <div class="card-deck">
-                <div class="card>
+                <div class="card">
                     <div class="card-header">
                         <h3>${engineer.name}</h3>
                         <h4>Engineer</h4>
@@ -45,7 +45,7 @@ const generateCards = employeeCards => {
     const intern = employeeCards.intern.map(function(intern) {
         let internCard = `
             <div class="card-deck">
-                <div class="card>
+                <div class="card">
                     <div class="card-header">
                         <h3>${intern.name}</h3>
                         <h4>Intern</h4>
